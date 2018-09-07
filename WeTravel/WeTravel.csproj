@@ -45,6 +45,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -56,17 +58,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="FormaPrijava.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FormaPrijava.Designer.cs">
+      <DependentUpon>FormaPrijava.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sesija.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="WeTravelModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WeTravelModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WeTravelModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WeTravelModel.edmx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FormaPrijava.resx">
+      <DependentUpon>FormaPrijava.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -87,6 +100,13 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EntityDeploy Include="WeTravelModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>WeTravelModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="WeTravelModel.edmx.diagram">
+      <DependentUpon>WeTravelModel.edmx</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -105,6 +125,25 @@
     <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="WeTravelModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>WeTravelModel.edmx</DependentUpon>
+      <LastGenOutput>WeTravelModel.Context.cs</LastGenOutput>
+      <CustomToolNamespace>WeTravel</CustomToolNamespace>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DB\DB.csproj">
+      <Project>{273E7CBD-831D-4E41-9C05-8519185DDD6C}</Project>
+      <Name>DB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Kriptiranje\Kriptiranje.csproj">
+      <Project>{344758D9-A982-4181-A6AE-A12D972FAB26}</Project>
+      <Name>Kriptiranje</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E48E28E9-884C-4259-B7C5-F54B60E0F1E0}</ProjectGuid>
+    <ProjectGuid>{273E7CBD-831D-4E41-9C05-8519185DDD6C}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>DB</RootNamespace>
     <AssemblyName>DB</AssemblyName>
@@ -51,8 +51,54 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="destinacija.cs">
+      <DependentUpon>WeTravelModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dodatna_aktivnost.cs">
+      <DependentUpon>WeTravelModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PogledRezervacijaDodatnihAktivnosti.cs">
+      <DependentUpon>WeTravelModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="prijava.cs">
+      <DependentUpon>WeTravelModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="prijevozno_poduzece.cs">
+      <DependentUpon>WeTravelModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="putnik.cs">
+      <DependentUpon>WeTravelModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="putovanje.cs">
+      <DependentUpon>WeTravelModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="racun.cs">
+      <DependentUpon>WeTravelModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="razina_prava.cs">
+      <DependentUpon>WeTravelModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="rezervacija.cs">
+      <DependentUpon>WeTravelModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>WeTravelModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WeTravelModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WeTravelModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WeTravelModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WeTravelModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="zaposlenik.cs">
+      <DependentUpon>WeTravelModel.tt</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -79,7 +125,15 @@
   <ItemGroup>
     <Content Include="WeTravelModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>WeTravelModel.Context.cs</LastGenOutput>
     </Content>
+    <Content Include="WeTravelModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>WeTravelModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

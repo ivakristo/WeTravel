@@ -5,7 +5,9 @@ VisualStudioVersion = 15.0.28010.2016
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeTravel", "WeTravel\WeTravel.csproj", "{B1254D4C-F9F0-4240-9A0E-6F33E31A7CBC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DB", "DB\DB.csproj", "{E48E28E9-884C-4259-B7C5-F54B60E0F1E0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kriptiranje", "Kriptiranje\Kriptiranje.csproj", "{344758D9-A982-4181-A6AE-A12D972FAB26}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DB", "DB\DB.csproj", "{273E7CBD-831D-4E41-9C05-8519185DDD6C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +19,14 @@ Global
 		{B1254D4C-F9F0-4240-9A0E-6F33E31A7CBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1254D4C-F9F0-4240-9A0E-6F33E31A7CBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1254D4C-F9F0-4240-9A0E-6F33E31A7CBC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E48E28E9-884C-4259-B7C5-F54B60E0F1E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E48E28E9-884C-4259-B7C5-F54B60E0F1E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E48E28E9-884C-4259-B7C5-F54B60E0F1E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E48E28E9-884C-4259-B7C5-F54B60E0F1E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{344758D9-A982-4181-A6AE-A12D972FAB26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{344758D9-A982-4181-A6AE-A12D972FAB26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{344758D9-A982-4181-A6AE-A12D972FAB26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{344758D9-A982-4181-A6AE-A12D972FAB26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{273E7CBD-831D-4E41-9C05-8519185DDD6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{273E7CBD-831D-4E41-9C05-8519185DDD6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{273E7CBD-831D-4E41-9C05-8519185DDD6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{273E7CBD-831D-4E41-9C05-8519185DDD6C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

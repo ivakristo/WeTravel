@@ -7,8 +7,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DB
+namespace WeTravel
 {
+    using DB;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
