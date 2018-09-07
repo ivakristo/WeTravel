@@ -1,0 +1,804 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="WeTravelModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="destinacija">
+          <Key>
+            <PropertyRef Name="destinacija_id" />
+          </Key>
+          <Property Name="destinacija_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="lokacija" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="opis" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="dodatna_aktivnost">
+          <Key>
+            <PropertyRef Name="dodatna_aktivnost_id" />
+          </Key>
+          <Property Name="dodatna_aktivnost_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="naziv" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="datumvrijeme_pocetka" Type="datetime" Nullable="false" />
+          <Property Name="datumvrijeme_zavrsetka" Type="datetime" Nullable="false" />
+          <Property Name="cijena" Type="float" Nullable="false" />
+          <Property Name="putovanje_FK" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="prijava">
+          <Key>
+            <PropertyRef Name="prijava_id" />
+          </Key>
+          <Property Name="prijava_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="datumvrijeme_prijava" Type="datetime" Nullable="false" />
+          <Property Name="zaposlenik_FK" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="prijevozno_poduzece">
+          <Key>
+            <PropertyRef Name="prijevozno_poduzece_id" />
+          </Key>
+          <Property Name="prijevozno_poduzece_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="naziv" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="broj_sjedala" Type="int" Nullable="false" />
+          <Property Name="vrsta_prijevoza" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="putnik">
+          <Key>
+            <PropertyRef Name="putnik_id" />
+          </Key>
+          <Property Name="putnik_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ime" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="prezime" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="kontakt" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="putovanje">
+          <Key>
+            <PropertyRef Name="putovanje_id" />
+          </Key>
+          <Property Name="putovanje_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="datumvrijeme_polaska" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="datumvrijeme_povratka" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="broj_osoba" Type="int" Nullable="false" />
+          <Property Name="cijena" Type="float" Nullable="false" />
+          <Property Name="zaposlenik_FK" Type="int" Nullable="false" />
+          <Property Name="prijevozno_poduzece_FK" Type="int" Nullable="false" />
+          <Property Name="destinacija_FK" Type="int" Nullable="false" />
+          <Property Name="naziv" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="racun">
+          <Key>
+            <PropertyRef Name="racun_id" />
+          </Key>
+          <Property Name="racun_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="zaposlenik_FK" Type="int" Nullable="false" />
+          <Property Name="datumvrijeme_izdavanja" Type="datetime" Nullable="false" />
+          <Property Name="ukupna_cijena" Type="float" Nullable="false" />
+          <Property Name="rezervacija_FK" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="razina_prava">
+          <Key>
+            <PropertyRef Name="razina_prava_id" />
+          </Key>
+          <Property Name="razina_prava_id" Type="int" Nullable="false" />
+          <Property Name="naziv" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="opis" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="rezervacija">
+          <Key>
+            <PropertyRef Name="rezervacija_id" />
+          </Key>
+          <Property Name="rezervacija_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="putovanje_FK" Type="int" Nullable="false" />
+          <Property Name="putnik_FK" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="rezervacija_dodatnih_aktivnosti">
+          <Key>
+            <PropertyRef Name="rezervacija_id" />
+            <PropertyRef Name="dodatne_aktivnosti_id" />
+          </Key>
+          <Property Name="rezervacija_id" Type="int" Nullable="false" />
+          <Property Name="dodatne_aktivnosti_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="zaposlenik">
+          <Key>
+            <PropertyRef Name="zaposlenik_id" />
+          </Key>
+          <Property Name="zaposlenik_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ime" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="prezime" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="korisnicko_ime" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="lozinka" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="kriptirana_lozinka" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="razina_prava_FK" Type="int" Nullable="false" />
+          <Property Name="status" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view '18014_DB.dbo.PogledRezervacijaDodatnihAktivnosti' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="PogledRezervacijaDodatnihAktivnosti">
+          <Key>
+            <PropertyRef Name="rezervacija_id" />
+            <PropertyRef Name="dodatne_aktivnosti_id" />
+          </Key>
+          <Property Name="rezervacija_id" Type="int" Nullable="false" />
+          <Property Name="dodatne_aktivnosti_id" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_dodatna_aktivnost_putovanje">
+          <End Role="putovanje" Type="Self.putovanje" Multiplicity="1" />
+          <End Role="dodatna_aktivnost" Type="Self.dodatna_aktivnost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="putovanje">
+              <PropertyRef Name="putovanje_id" />
+            </Principal>
+            <Dependent Role="dodatna_aktivnost">
+              <PropertyRef Name="putovanje_FK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_prijava_zaposlenik">
+          <End Role="zaposlenik" Type="Self.zaposlenik" Multiplicity="1" />
+          <End Role="prijava" Type="Self.prijava" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="zaposlenik">
+              <PropertyRef Name="zaposlenik_id" />
+            </Principal>
+            <Dependent Role="prijava">
+              <PropertyRef Name="zaposlenik_FK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_putovanje_destinacija">
+          <End Role="destinacija" Type="Self.destinacija" Multiplicity="1" />
+          <End Role="putovanje" Type="Self.putovanje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="destinacija">
+              <PropertyRef Name="destinacija_id" />
+            </Principal>
+            <Dependent Role="putovanje">
+              <PropertyRef Name="destinacija_FK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_putovanje_prijevozno_poduzece">
+          <End Role="prijevozno_poduzece" Type="Self.prijevozno_poduzece" Multiplicity="1" />
+          <End Role="putovanje" Type="Self.putovanje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="prijevozno_poduzece">
+              <PropertyRef Name="prijevozno_poduzece_id" />
+            </Principal>
+            <Dependent Role="putovanje">
+              <PropertyRef Name="prijevozno_poduzece_FK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_putovanje_zaposlenik">
+          <End Role="zaposlenik" Type="Self.zaposlenik" Multiplicity="1" />
+          <End Role="putovanje" Type="Self.putovanje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="zaposlenik">
+              <PropertyRef Name="zaposlenik_id" />
+            </Principal>
+            <Dependent Role="putovanje">
+              <PropertyRef Name="zaposlenik_FK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_racun_rezervacija">
+          <End Role="rezervacija" Type="Self.rezervacija" Multiplicity="1" />
+          <End Role="racun" Type="Self.racun" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="rezervacija">
+              <PropertyRef Name="rezervacija_id" />
+            </Principal>
+            <Dependent Role="racun">
+              <PropertyRef Name="rezervacija_FK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_rezervacija_dodatnih_aktivnosti_dodatna_aktivnost">
+          <End Role="dodatna_aktivnost" Type="Self.dodatna_aktivnost" Multiplicity="1" />
+          <End Role="rezervacija_dodatnih_aktivnosti" Type="Self.rezervacija_dodatnih_aktivnosti" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="dodatna_aktivnost">
+              <PropertyRef Name="dodatna_aktivnost_id" />
+            </Principal>
+            <Dependent Role="rezervacija_dodatnih_aktivnosti">
+              <PropertyRef Name="dodatne_aktivnosti_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_rezervacija_dodatnih_aktivnosti_rezervacija">
+          <End Role="rezervacija" Type="Self.rezervacija" Multiplicity="1" />
+          <End Role="rezervacija_dodatnih_aktivnosti" Type="Self.rezervacija_dodatnih_aktivnosti" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="rezervacija">
+              <PropertyRef Name="rezervacija_id" />
+            </Principal>
+            <Dependent Role="rezervacija_dodatnih_aktivnosti">
+              <PropertyRef Name="rezervacija_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_rezervacija_putnik">
+          <End Role="putnik" Type="Self.putnik" Multiplicity="1" />
+          <End Role="rezervacija" Type="Self.rezervacija" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="putnik">
+              <PropertyRef Name="putnik_id" />
+            </Principal>
+            <Dependent Role="rezervacija">
+              <PropertyRef Name="putnik_FK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_rezervacija_putovanje">
+          <End Role="putovanje" Type="Self.putovanje" Multiplicity="1" />
+          <End Role="rezervacija" Type="Self.rezervacija" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="putovanje">
+              <PropertyRef Name="putovanje_id" />
+            </Principal>
+            <Dependent Role="rezervacija">
+              <PropertyRef Name="putovanje_FK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_zaposlenik_razina_prava">
+          <End Role="razina_prava" Type="Self.razina_prava" Multiplicity="1" />
+          <End Role="zaposlenik" Type="Self.zaposlenik" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="razina_prava">
+              <PropertyRef Name="razina_prava_id" />
+            </Principal>
+            <Dependent Role="zaposlenik">
+              <PropertyRef Name="razina_prava_FK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="WeTravelModelStoreContainer">
+          <EntitySet Name="destinacija" EntityType="Self.destinacija" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="dodatna_aktivnost" EntityType="Self.dodatna_aktivnost" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="prijava" EntityType="Self.prijava" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="prijevozno_poduzece" EntityType="Self.prijevozno_poduzece" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="putnik" EntityType="Self.putnik" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="putovanje" EntityType="Self.putovanje" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="racun" EntityType="Self.racun" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="razina_prava" EntityType="Self.razina_prava" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="rezervacija" EntityType="Self.rezervacija" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="rezervacija_dodatnih_aktivnosti" EntityType="Self.rezervacija_dodatnih_aktivnosti" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="zaposlenik" EntityType="Self.zaposlenik" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PogledRezervacijaDodatnihAktivnosti" EntityType="Self.PogledRezervacijaDodatnihAktivnosti" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [PogledRezervacijaDodatnihAktivnosti].[rezervacija_id] AS [rezervacija_id], 
+    [PogledRezervacijaDodatnihAktivnosti].[dodatne_aktivnosti_id] AS [dodatne_aktivnosti_id]
+    FROM [dbo].[PogledRezervacijaDodatnihAktivnosti] AS [PogledRezervacijaDodatnihAktivnosti]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_dodatna_aktivnost_putovanje" Association="Self.FK_dodatna_aktivnost_putovanje">
+            <End Role="putovanje" EntitySet="putovanje" />
+            <End Role="dodatna_aktivnost" EntitySet="dodatna_aktivnost" />
+          </AssociationSet>
+          <AssociationSet Name="FK_prijava_zaposlenik" Association="Self.FK_prijava_zaposlenik">
+            <End Role="zaposlenik" EntitySet="zaposlenik" />
+            <End Role="prijava" EntitySet="prijava" />
+          </AssociationSet>
+          <AssociationSet Name="FK_putovanje_destinacija" Association="Self.FK_putovanje_destinacija">
+            <End Role="destinacija" EntitySet="destinacija" />
+            <End Role="putovanje" EntitySet="putovanje" />
+          </AssociationSet>
+          <AssociationSet Name="FK_putovanje_prijevozno_poduzece" Association="Self.FK_putovanje_prijevozno_poduzece">
+            <End Role="prijevozno_poduzece" EntitySet="prijevozno_poduzece" />
+            <End Role="putovanje" EntitySet="putovanje" />
+          </AssociationSet>
+          <AssociationSet Name="FK_putovanje_zaposlenik" Association="Self.FK_putovanje_zaposlenik">
+            <End Role="zaposlenik" EntitySet="zaposlenik" />
+            <End Role="putovanje" EntitySet="putovanje" />
+          </AssociationSet>
+          <AssociationSet Name="FK_racun_rezervacija" Association="Self.FK_racun_rezervacija">
+            <End Role="rezervacija" EntitySet="rezervacija" />
+            <End Role="racun" EntitySet="racun" />
+          </AssociationSet>
+          <AssociationSet Name="FK_rezervacija_dodatnih_aktivnosti_dodatna_aktivnost" Association="Self.FK_rezervacija_dodatnih_aktivnosti_dodatna_aktivnost">
+            <End Role="dodatna_aktivnost" EntitySet="dodatna_aktivnost" />
+            <End Role="rezervacija_dodatnih_aktivnosti" EntitySet="rezervacija_dodatnih_aktivnosti" />
+          </AssociationSet>
+          <AssociationSet Name="FK_rezervacija_dodatnih_aktivnosti_rezervacija" Association="Self.FK_rezervacija_dodatnih_aktivnosti_rezervacija">
+            <End Role="rezervacija" EntitySet="rezervacija" />
+            <End Role="rezervacija_dodatnih_aktivnosti" EntitySet="rezervacija_dodatnih_aktivnosti" />
+          </AssociationSet>
+          <AssociationSet Name="FK_rezervacija_putnik" Association="Self.FK_rezervacija_putnik">
+            <End Role="putnik" EntitySet="putnik" />
+            <End Role="rezervacija" EntitySet="rezervacija" />
+          </AssociationSet>
+          <AssociationSet Name="FK_rezervacija_putovanje" Association="Self.FK_rezervacija_putovanje">
+            <End Role="putovanje" EntitySet="putovanje" />
+            <End Role="rezervacija" EntitySet="rezervacija" />
+          </AssociationSet>
+          <AssociationSet Name="FK_zaposlenik_razina_prava" Association="Self.FK_zaposlenik_razina_prava">
+            <End Role="razina_prava" EntitySet="razina_prava" />
+            <End Role="zaposlenik" EntitySet="zaposlenik" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="WeTravelModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="destinacija">
+          <Key>
+            <PropertyRef Name="destinacija_id" />
+          </Key>
+          <Property Name="destinacija_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="lokacija" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="opis" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="putovanje" Relationship="Self.FK_putovanje_destinacija" FromRole="destinacija" ToRole="putovanje" />
+        </EntityType>
+        <EntityType Name="dodatna_aktivnost">
+          <Key>
+            <PropertyRef Name="dodatna_aktivnost_id" />
+          </Key>
+          <Property Name="dodatna_aktivnost_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="naziv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="datumvrijeme_pocetka" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="datumvrijeme_zavrsetka" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="cijena" Type="Double" Nullable="false" />
+          <Property Name="putovanje_FK" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="putovanje" Relationship="Self.FK_dodatna_aktivnost_putovanje" FromRole="dodatna_aktivnost" ToRole="putovanje" />
+          <NavigationProperty Name="rezervacija" Relationship="Self.rezervacija_dodatnih_aktivnosti" FromRole="dodatna_aktivnost" ToRole="rezervacija" />
+        </EntityType>
+        <EntityType Name="prijava">
+          <Key>
+            <PropertyRef Name="prijava_id" />
+          </Key>
+          <Property Name="prijava_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="datumvrijeme_prijava" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="zaposlenik_FK" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="zaposlenik" Relationship="Self.FK_prijava_zaposlenik" FromRole="prijava" ToRole="zaposlenik" />
+        </EntityType>
+        <EntityType Name="prijevozno_poduzece">
+          <Key>
+            <PropertyRef Name="prijevozno_poduzece_id" />
+          </Key>
+          <Property Name="prijevozno_poduzece_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="naziv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="broj_sjedala" Type="Int32" Nullable="false" />
+          <Property Name="vrsta_prijevoza" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="putovanje" Relationship="Self.FK_putovanje_prijevozno_poduzece" FromRole="prijevozno_poduzece" ToRole="putovanje" />
+        </EntityType>
+        <EntityType Name="putnik">
+          <Key>
+            <PropertyRef Name="putnik_id" />
+          </Key>
+          <Property Name="putnik_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="prezime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="kontakt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="rezervacija" Relationship="Self.FK_rezervacija_putnik" FromRole="putnik" ToRole="rezervacija" />
+        </EntityType>
+        <EntityType Name="putovanje">
+          <Key>
+            <PropertyRef Name="putovanje_id" />
+          </Key>
+          <Property Name="putovanje_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="datumvrijeme_polaska" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="datumvrijeme_povratka" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="broj_osoba" Type="Int32" Nullable="false" />
+          <Property Name="cijena" Type="Double" Nullable="false" />
+          <Property Name="zaposlenik_FK" Type="Int32" Nullable="false" />
+          <Property Name="prijevozno_poduzece_FK" Type="Int32" Nullable="false" />
+          <Property Name="destinacija_FK" Type="Int32" Nullable="false" />
+          <Property Name="naziv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="destinacija" Relationship="Self.FK_putovanje_destinacija" FromRole="putovanje" ToRole="destinacija" />
+          <NavigationProperty Name="dodatna_aktivnost" Relationship="Self.FK_dodatna_aktivnost_putovanje" FromRole="putovanje" ToRole="dodatna_aktivnost" />
+          <NavigationProperty Name="prijevozno_poduzece" Relationship="Self.FK_putovanje_prijevozno_poduzece" FromRole="putovanje" ToRole="prijevozno_poduzece" />
+          <NavigationProperty Name="zaposlenik" Relationship="Self.FK_putovanje_zaposlenik" FromRole="putovanje" ToRole="zaposlenik" />
+          <NavigationProperty Name="rezervacija" Relationship="Self.FK_rezervacija_putovanje" FromRole="putovanje" ToRole="rezervacija" />
+        </EntityType>
+        <EntityType Name="racun">
+          <Key>
+            <PropertyRef Name="racun_id" />
+          </Key>
+          <Property Name="racun_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="zaposlenik_FK" Type="Int32" Nullable="false" />
+          <Property Name="datumvrijeme_izdavanja" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ukupna_cijena" Type="Double" Nullable="false" />
+          <Property Name="rezervacija_FK" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="rezervacija" Relationship="Self.FK_racun_rezervacija" FromRole="racun" ToRole="rezervacija" />
+        </EntityType>
+        <EntityType Name="razina_prava">
+          <Key>
+            <PropertyRef Name="razina_prava_id" />
+          </Key>
+          <Property Name="razina_prava_id" Type="Int32" Nullable="false" />
+          <Property Name="naziv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="opis" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="zaposlenik" Relationship="Self.FK_zaposlenik_razina_prava" FromRole="razina_prava" ToRole="zaposlenik" />
+        </EntityType>
+        <EntityType Name="rezervacija">
+          <Key>
+            <PropertyRef Name="rezervacija_id" />
+          </Key>
+          <Property Name="rezervacija_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="putovanje_FK" Type="Int32" Nullable="false" />
+          <Property Name="putnik_FK" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="putnik" Relationship="Self.FK_rezervacija_putnik" FromRole="rezervacija" ToRole="putnik" />
+          <NavigationProperty Name="putovanje" Relationship="Self.FK_rezervacija_putovanje" FromRole="rezervacija" ToRole="putovanje" />
+          <NavigationProperty Name="racun" Relationship="Self.FK_racun_rezervacija" FromRole="rezervacija" ToRole="racun" />
+          <NavigationProperty Name="dodatna_aktivnost" Relationship="Self.rezervacija_dodatnih_aktivnosti" FromRole="rezervacija" ToRole="dodatna_aktivnost" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="zaposlenik">
+          <Key>
+            <PropertyRef Name="zaposlenik_id" />
+          </Key>
+          <Property Name="zaposlenik_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="prezime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="korisnicko_ime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="lozinka" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="kriptirana_lozinka" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="razina_prava_FK" Type="Int32" Nullable="false" />
+          <Property Name="status" Type="Int32" />
+          <NavigationProperty Name="prijava" Relationship="Self.FK_prijava_zaposlenik" FromRole="zaposlenik" ToRole="prijava" />
+          <NavigationProperty Name="putovanje" Relationship="Self.FK_putovanje_zaposlenik" FromRole="zaposlenik" ToRole="putovanje" />
+          <NavigationProperty Name="razina_prava" Relationship="Self.FK_zaposlenik_razina_prava" FromRole="zaposlenik" ToRole="razina_prava" />
+        </EntityType>
+        <EntityType Name="PogledRezervacijaDodatnihAktivnosti">
+          <Key>
+            <PropertyRef Name="rezervacija_id" />
+            <PropertyRef Name="dodatne_aktivnosti_id" />
+          </Key>
+          <Property Name="rezervacija_id" Type="Int32" Nullable="false" />
+          <Property Name="dodatne_aktivnosti_id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_putovanje_destinacija">
+          <End Role="destinacija" Type="Self.destinacija" Multiplicity="1" />
+          <End Role="putovanje" Type="Self.putovanje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="destinacija">
+              <PropertyRef Name="destinacija_id" />
+            </Principal>
+            <Dependent Role="putovanje">
+              <PropertyRef Name="destinacija_FK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dodatna_aktivnost_putovanje">
+          <End Role="putovanje" Type="Self.putovanje" Multiplicity="1" />
+          <End Role="dodatna_aktivnost" Type="Self.dodatna_aktivnost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="putovanje">
+              <PropertyRef Name="putovanje_id" />
+            </Principal>
+            <Dependent Role="dodatna_aktivnost">
+              <PropertyRef Name="putovanje_FK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_prijava_zaposlenik">
+          <End Role="zaposlenik" Type="Self.zaposlenik" Multiplicity="1" />
+          <End Role="prijava" Type="Self.prijava" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="zaposlenik">
+              <PropertyRef Name="zaposlenik_id" />
+            </Principal>
+            <Dependent Role="prijava">
+              <PropertyRef Name="zaposlenik_FK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_putovanje_prijevozno_poduzece">
+          <End Role="prijevozno_poduzece" Type="Self.prijevozno_poduzece" Multiplicity="1" />
+          <End Role="putovanje" Type="Self.putovanje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="prijevozno_poduzece">
+              <PropertyRef Name="prijevozno_poduzece_id" />
+            </Principal>
+            <Dependent Role="putovanje">
+              <PropertyRef Name="prijevozno_poduzece_FK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_rezervacija_putnik">
+          <End Role="putnik" Type="Self.putnik" Multiplicity="1" />
+          <End Role="rezervacija" Type="Self.rezervacija" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="putnik">
+              <PropertyRef Name="putnik_id" />
+            </Principal>
+            <Dependent Role="rezervacija">
+              <PropertyRef Name="putnik_FK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_putovanje_zaposlenik">
+          <End Role="zaposlenik" Type="Self.zaposlenik" Multiplicity="1" />
+          <End Role="putovanje" Type="Self.putovanje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="zaposlenik">
+              <PropertyRef Name="zaposlenik_id" />
+            </Principal>
+            <Dependent Role="putovanje">
+              <PropertyRef Name="zaposlenik_FK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_rezervacija_putovanje">
+          <End Role="putovanje" Type="Self.putovanje" Multiplicity="1" />
+          <End Role="rezervacija" Type="Self.rezervacija" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="putovanje">
+              <PropertyRef Name="putovanje_id" />
+            </Principal>
+            <Dependent Role="rezervacija">
+              <PropertyRef Name="putovanje_FK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_racun_rezervacija">
+          <End Role="rezervacija" Type="Self.rezervacija" Multiplicity="1" />
+          <End Role="racun" Type="Self.racun" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="rezervacija">
+              <PropertyRef Name="rezervacija_id" />
+            </Principal>
+            <Dependent Role="racun">
+              <PropertyRef Name="rezervacija_FK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_zaposlenik_razina_prava">
+          <End Role="razina_prava" Type="Self.razina_prava" Multiplicity="1" />
+          <End Role="zaposlenik" Type="Self.zaposlenik" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="razina_prava">
+              <PropertyRef Name="razina_prava_id" />
+            </Principal>
+            <Dependent Role="zaposlenik">
+              <PropertyRef Name="razina_prava_FK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="rezervacija_dodatnih_aktivnosti">
+          <End Role="dodatna_aktivnost" Type="Self.dodatna_aktivnost" Multiplicity="*" />
+          <End Role="rezervacija" Type="Self.rezervacija" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="EntitiesWeTravel" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="destinacija" EntityType="Self.destinacija" />
+          <EntitySet Name="dodatna_aktivnost" EntityType="Self.dodatna_aktivnost" />
+          <EntitySet Name="prijava" EntityType="Self.prijava" />
+          <EntitySet Name="prijevozno_poduzece" EntityType="Self.prijevozno_poduzece" />
+          <EntitySet Name="putnik" EntityType="Self.putnik" />
+          <EntitySet Name="putovanje" EntityType="Self.putovanje" />
+          <EntitySet Name="racun" EntityType="Self.racun" />
+          <EntitySet Name="razina_prava" EntityType="Self.razina_prava" />
+          <EntitySet Name="rezervacija" EntityType="Self.rezervacija" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="zaposlenik" EntityType="Self.zaposlenik" />
+          <EntitySet Name="PogledRezervacijaDodatnihAktivnosti" EntityType="Self.PogledRezervacijaDodatnihAktivnosti" />
+          <AssociationSet Name="FK_putovanje_destinacija" Association="Self.FK_putovanje_destinacija">
+            <End Role="destinacija" EntitySet="destinacija" />
+            <End Role="putovanje" EntitySet="putovanje" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dodatna_aktivnost_putovanje" Association="Self.FK_dodatna_aktivnost_putovanje">
+            <End Role="putovanje" EntitySet="putovanje" />
+            <End Role="dodatna_aktivnost" EntitySet="dodatna_aktivnost" />
+          </AssociationSet>
+          <AssociationSet Name="FK_prijava_zaposlenik" Association="Self.FK_prijava_zaposlenik">
+            <End Role="zaposlenik" EntitySet="zaposlenik" />
+            <End Role="prijava" EntitySet="prijava" />
+          </AssociationSet>
+          <AssociationSet Name="FK_putovanje_prijevozno_poduzece" Association="Self.FK_putovanje_prijevozno_poduzece">
+            <End Role="prijevozno_poduzece" EntitySet="prijevozno_poduzece" />
+            <End Role="putovanje" EntitySet="putovanje" />
+          </AssociationSet>
+          <AssociationSet Name="FK_rezervacija_putnik" Association="Self.FK_rezervacija_putnik">
+            <End Role="putnik" EntitySet="putnik" />
+            <End Role="rezervacija" EntitySet="rezervacija" />
+          </AssociationSet>
+          <AssociationSet Name="FK_putovanje_zaposlenik" Association="Self.FK_putovanje_zaposlenik">
+            <End Role="zaposlenik" EntitySet="zaposlenik" />
+            <End Role="putovanje" EntitySet="putovanje" />
+          </AssociationSet>
+          <AssociationSet Name="FK_rezervacija_putovanje" Association="Self.FK_rezervacija_putovanje">
+            <End Role="putovanje" EntitySet="putovanje" />
+            <End Role="rezervacija" EntitySet="rezervacija" />
+          </AssociationSet>
+          <AssociationSet Name="FK_racun_rezervacija" Association="Self.FK_racun_rezervacija">
+            <End Role="rezervacija" EntitySet="rezervacija" />
+            <End Role="racun" EntitySet="racun" />
+          </AssociationSet>
+          <AssociationSet Name="FK_zaposlenik_razina_prava" Association="Self.FK_zaposlenik_razina_prava">
+            <End Role="razina_prava" EntitySet="razina_prava" />
+            <End Role="zaposlenik" EntitySet="zaposlenik" />
+          </AssociationSet>
+          <AssociationSet Name="rezervacija_dodatnih_aktivnosti" Association="Self.rezervacija_dodatnih_aktivnosti">
+            <End Role="dodatna_aktivnost" EntitySet="dodatna_aktivnost" />
+            <End Role="rezervacija" EntitySet="rezervacija" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="WeTravelModelStoreContainer" CdmEntityContainer="EntitiesWeTravel">
+          <EntitySetMapping Name="destinacija">
+            <EntityTypeMapping TypeName="WeTravelModel.destinacija">
+              <MappingFragment StoreEntitySet="destinacija">
+                <ScalarProperty Name="destinacija_id" ColumnName="destinacija_id" />
+                <ScalarProperty Name="lokacija" ColumnName="lokacija" />
+                <ScalarProperty Name="opis" ColumnName="opis" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="dodatna_aktivnost">
+            <EntityTypeMapping TypeName="WeTravelModel.dodatna_aktivnost">
+              <MappingFragment StoreEntitySet="dodatna_aktivnost">
+                <ScalarProperty Name="dodatna_aktivnost_id" ColumnName="dodatna_aktivnost_id" />
+                <ScalarProperty Name="naziv" ColumnName="naziv" />
+                <ScalarProperty Name="datumvrijeme_pocetka" ColumnName="datumvrijeme_pocetka" />
+                <ScalarProperty Name="datumvrijeme_zavrsetka" ColumnName="datumvrijeme_zavrsetka" />
+                <ScalarProperty Name="cijena" ColumnName="cijena" />
+                <ScalarProperty Name="putovanje_FK" ColumnName="putovanje_FK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="prijava">
+            <EntityTypeMapping TypeName="WeTravelModel.prijava">
+              <MappingFragment StoreEntitySet="prijava">
+                <ScalarProperty Name="prijava_id" ColumnName="prijava_id" />
+                <ScalarProperty Name="datumvrijeme_prijava" ColumnName="datumvrijeme_prijava" />
+                <ScalarProperty Name="zaposlenik_FK" ColumnName="zaposlenik_FK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="prijevozno_poduzece">
+            <EntityTypeMapping TypeName="WeTravelModel.prijevozno_poduzece">
+              <MappingFragment StoreEntitySet="prijevozno_poduzece">
+                <ScalarProperty Name="prijevozno_poduzece_id" ColumnName="prijevozno_poduzece_id" />
+                <ScalarProperty Name="naziv" ColumnName="naziv" />
+                <ScalarProperty Name="broj_sjedala" ColumnName="broj_sjedala" />
+                <ScalarProperty Name="vrsta_prijevoza" ColumnName="vrsta_prijevoza" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="putnik">
+            <EntityTypeMapping TypeName="WeTravelModel.putnik">
+              <MappingFragment StoreEntitySet="putnik">
+                <ScalarProperty Name="putnik_id" ColumnName="putnik_id" />
+                <ScalarProperty Name="ime" ColumnName="ime" />
+                <ScalarProperty Name="prezime" ColumnName="prezime" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="kontakt" ColumnName="kontakt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="putovanje">
+            <EntityTypeMapping TypeName="WeTravelModel.putovanje">
+              <MappingFragment StoreEntitySet="putovanje">
+                <ScalarProperty Name="putovanje_id" ColumnName="putovanje_id" />
+                <ScalarProperty Name="datumvrijeme_polaska" ColumnName="datumvrijeme_polaska" />
+                <ScalarProperty Name="datumvrijeme_povratka" ColumnName="datumvrijeme_povratka" />
+                <ScalarProperty Name="broj_osoba" ColumnName="broj_osoba" />
+                <ScalarProperty Name="cijena" ColumnName="cijena" />
+                <ScalarProperty Name="zaposlenik_FK" ColumnName="zaposlenik_FK" />
+                <ScalarProperty Name="prijevozno_poduzece_FK" ColumnName="prijevozno_poduzece_FK" />
+                <ScalarProperty Name="destinacija_FK" ColumnName="destinacija_FK" />
+                <ScalarProperty Name="naziv" ColumnName="naziv" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="racun">
+            <EntityTypeMapping TypeName="WeTravelModel.racun">
+              <MappingFragment StoreEntitySet="racun">
+                <ScalarProperty Name="racun_id" ColumnName="racun_id" />
+                <ScalarProperty Name="zaposlenik_FK" ColumnName="zaposlenik_FK" />
+                <ScalarProperty Name="datumvrijeme_izdavanja" ColumnName="datumvrijeme_izdavanja" />
+                <ScalarProperty Name="ukupna_cijena" ColumnName="ukupna_cijena" />
+                <ScalarProperty Name="rezervacija_FK" ColumnName="rezervacija_FK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="razina_prava">
+            <EntityTypeMapping TypeName="WeTravelModel.razina_prava">
+              <MappingFragment StoreEntitySet="razina_prava">
+                <ScalarProperty Name="razina_prava_id" ColumnName="razina_prava_id" />
+                <ScalarProperty Name="naziv" ColumnName="naziv" />
+                <ScalarProperty Name="opis" ColumnName="opis" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="rezervacija">
+            <EntityTypeMapping TypeName="WeTravelModel.rezervacija">
+              <MappingFragment StoreEntitySet="rezervacija">
+                <ScalarProperty Name="rezervacija_id" ColumnName="rezervacija_id" />
+                <ScalarProperty Name="putovanje_FK" ColumnName="putovanje_FK" />
+                <ScalarProperty Name="putnik_FK" ColumnName="putnik_FK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="WeTravelModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="zaposlenik">
+            <EntityTypeMapping TypeName="WeTravelModel.zaposlenik">
+              <MappingFragment StoreEntitySet="zaposlenik">
+                <ScalarProperty Name="zaposlenik_id" ColumnName="zaposlenik_id" />
+                <ScalarProperty Name="ime" ColumnName="ime" />
+                <ScalarProperty Name="prezime" ColumnName="prezime" />
+                <ScalarProperty Name="korisnicko_ime" ColumnName="korisnicko_ime" />
+                <ScalarProperty Name="lozinka" ColumnName="lozinka" />
+                <ScalarProperty Name="kriptirana_lozinka" ColumnName="kriptirana_lozinka" />
+                <ScalarProperty Name="razina_prava_FK" ColumnName="razina_prava_FK" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PogledRezervacijaDodatnihAktivnosti">
+            <EntityTypeMapping TypeName="WeTravelModel.PogledRezervacijaDodatnihAktivnosti">
+              <MappingFragment StoreEntitySet="PogledRezervacijaDodatnihAktivnosti">
+                <ScalarProperty Name="rezervacija_id" ColumnName="rezervacija_id" />
+                <ScalarProperty Name="dodatne_aktivnosti_id" ColumnName="dodatne_aktivnosti_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="rezervacija_dodatnih_aktivnosti" TypeName="WeTravelModel.rezervacija_dodatnih_aktivnosti" StoreEntitySet="rezervacija_dodatnih_aktivnosti">
+            <EndProperty Name="dodatna_aktivnost">
+              <ScalarProperty Name="dodatna_aktivnost_id" ColumnName="dodatne_aktivnosti_id" />
+            </EndProperty>
+            <EndProperty Name="rezervacija">
+              <ScalarProperty Name="rezervacija_id" ColumnName="rezervacija_id" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
