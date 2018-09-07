@@ -37,7 +37,8 @@ namespace WeTravel
 
         private void buttonIzdavanjeRacuna_Click(object sender, EventArgs e)
         {
-
+            FormaNoviRacun formaRacun = new FormaNoviRacun();
+            formaRacun.ShowDialog();
         }
 
         private void buttonAdministracijaRacuna_Click(object sender, EventArgs e)

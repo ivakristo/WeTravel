@@ -1,0 +1,1461 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <Body>
+    <ReportItems>
+      <Tablix Name="Tablix1">
+        <TablixBody>
+          <TablixColumns>
+            <TablixColumn>
+              <Width>2.84396cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>4.29979cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>4.11396cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>2.5cm</Width>
+            </TablixColumn>
+          </TablixColumns>
+          <TablixRows>
+            <TablixRow>
+              <Height>0.6cm</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox1">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Naziv putovanja</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox1</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox4">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Datum i vrijeme polaska</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox4</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox6">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Datum i vrijeme povratka</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox6</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox3">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Cijena</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox3</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.6cm</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="naziv">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!naziv.Value</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>naziv</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="datumvrijeme_polaska">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!datumvrijeme_polaska.Value</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>datumvrijeme_polaska</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="datumvrijeme_povratka">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!datumvrijeme_povratka.Value</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>datumvrijeme_povratka</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="cijena">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!cijena.Value</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>cijena</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+          </TablixRows>
+        </TablixBody>
+        <TablixColumnHierarchy>
+          <TablixMembers>
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+          </TablixMembers>
+        </TablixColumnHierarchy>
+        <TablixRowHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <KeepWithGroup>After</KeepWithGroup>
+            </TablixMember>
+            <TablixMember>
+              <Group Name="Details" />
+            </TablixMember>
+          </TablixMembers>
+        </TablixRowHierarchy>
+        <DataSetName>DataSetPutovanje</DataSetName>
+        <Top>1.03999cm</Top>
+        <Left>1.37614cm</Left>
+        <Height>1.2cm</Height>
+        <Width>13.75771cm</Width>
+        <Style>
+          <Border>
+            <Color>White</Color>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Tablix>
+      <Tablix Name="Tablix2">
+        <TablixBody>
+          <TablixColumns>
+            <TablixColumn>
+              <Width>4.11396cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>2.5cm</Width>
+            </TablixColumn>
+          </TablixColumns>
+          <TablixRows>
+            <TablixRow>
+              <Height>0.6cm</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox19">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Ukupno</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox19</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="ukupna_cijena">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!ukupna_cijena.Value</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>ukupna_cijena</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+          </TablixRows>
+        </TablixBody>
+        <TablixColumnHierarchy>
+          <TablixMembers>
+            <TablixMember />
+            <TablixMember />
+          </TablixMembers>
+        </TablixColumnHierarchy>
+        <TablixRowHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <Group Name="Details1" />
+            </TablixMember>
+          </TablixMembers>
+        </TablixRowHierarchy>
+        <DataSetName>DataSetRacun</DataSetName>
+        <Top>4.11056cm</Top>
+        <Left>8.5199cm</Left>
+        <Height>0.6cm</Height>
+        <Width>6.61396cm</Width>
+        <ZIndex>1</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Tablix>
+      <Tablix Name="Tablix3">
+        <TablixBody>
+          <TablixColumns>
+            <TablixColumn>
+              <Width>2.84396cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>4.29979cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>4.11396cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>2.5cm</Width>
+            </TablixColumn>
+          </TablixColumns>
+          <TablixRows>
+            <TablixRow>
+              <Height>0.6cm</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox13">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Naziv aktivnosti</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox13</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox15">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Datum i vrijeme početka</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox15</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox17">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Datum i vrijeme završetka</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox17</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox21">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Cijena</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox21</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.6cm</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="naziv1">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!naziv.Value</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>naziv1</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="datumvrijeme_pocetka">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!datumvrijeme_pocetka.Value</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>datumvrijeme_pocetka</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="datumvrijeme_zavrsetka">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!datumvrijeme_zavrsetka.Value</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>datumvrijeme_zavrsetka</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="cijena1">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!cijena.Value</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>cijena1</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+          </TablixRows>
+        </TablixBody>
+        <TablixColumnHierarchy>
+          <TablixMembers>
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+          </TablixMembers>
+        </TablixColumnHierarchy>
+        <TablixRowHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <KeepWithGroup>After</KeepWithGroup>
+            </TablixMember>
+            <TablixMember>
+              <Group Name="Details2" />
+            </TablixMember>
+          </TablixMembers>
+        </TablixRowHierarchy>
+        <DataSetName>DataSetDodatneAktivnosti</DataSetName>
+        <Top>2.91055cm</Top>
+        <Left>1.37614cm</Left>
+        <Height>1.2cm</Height>
+        <Width>13.75771cm</Width>
+        <ZIndex>2</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Tablix>
+      <Textbox Name="Textbox2">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Putovanje</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox2</rd:DefaultName>
+        <Top>0.36944cm</Top>
+        <Left>1.37614cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>3</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox10">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Dodatne aktivnosti</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox10</rd:DefaultName>
+        <Top>2.27527cm</Top>
+        <Left>1.37614cm</Left>
+        <Height>0.6cm</Height>
+        <Width>3.53188cm</Width>
+        <ZIndex>4</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+    </ReportItems>
+    <Height>2.07292in</Height>
+    <Style />
+  </Body>
+  <Width>6.5in</Width>
+  <Page>
+    <PageHeader>
+      <Height>5.80402cm</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <ReportItems>
+        <Image Name="Logo">
+          <Source>Embedded</Source>
+          <Value>Screenshot_28</Value>
+          <Sizing>FitProportional</Sizing>
+          <Top>0.53509cm</Top>
+          <Left>0.63531cm</Left>
+          <Height>2.07574cm</Height>
+          <Width>3.58479cm</Width>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </Image>
+        <Textbox Name="Textbox5">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Putnička agencija WeTravel d.o.o.</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Pavlinska 2</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>42000 Varaždin</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Telefon: +385-12-345-678</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value />
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox5</rd:DefaultName>
+          <Top>0.53509cm</Top>
+          <Left>11.89948cm</Left>
+          <Height>2.61083cm</Height>
+          <Width>4.16687cm</Width>
+          <ZIndex>1</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox8">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Račun broj </Value>
+                  <Style>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox8</rd:DefaultName>
+          <Top>2.27541cm</Top>
+          <Left>6.36385cm</Left>
+          <Height>0.6cm</Height>
+          <Width>2.15604cm</Width>
+          <ZIndex>2</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox11">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Datum i vrijeme izdavanja računa:</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox11</rd:DefaultName>
+          <Top>3.51013cm</Top>
+          <Left>0.78761cm</Left>
+          <Height>0.6cm</Height>
+          <Width>5.33104cm</Width>
+          <ZIndex>3</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox14">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=First(Fields!datumvrijeme_izdavanja.Value, "DataSetRacun")</Value>
+                  <Style>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox14</rd:DefaultName>
+          <Top>3.51013cm</Top>
+          <Left>5.77469cm</Left>
+          <Height>0.6cm</Height>
+          <Width>4.14042cm</Width>
+          <ZIndex>4</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox16">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=First(Fields!racun_id.Value, "DataSetRacun")</Value>
+                  <Style>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox16</rd:DefaultName>
+          <Top>2.27541cm</Top>
+          <Left>8.51989cm</Left>
+          <Height>0.6cm</Height>
+          <Width>1.20292cm</Width>
+          <ZIndex>5</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox20">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Prezime i ime:</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox20</rd:DefaultName>
+          <Top>4.28652cm</Top>
+          <Left>0.78761cm</Left>
+          <Height>0.6cm</Height>
+          <Width>2.5cm</Width>
+          <ZIndex>6</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox22">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=First(Fields!prezime.Value, "DataSetPutnik") + " " + First(Fields!ime.Value, "DataSetPutnik")</Value>
+                  <Style>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox22</rd:DefaultName>
+          <Top>4.28652cm</Top>
+          <Left>2.90428cm</Left>
+          <Height>0.6cm</Height>
+          <Width>2.89688cm</Width>
+          <ZIndex>7</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox26">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Kontakt:</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox26</rd:DefaultName>
+          <Top>5.06291cm</Top>
+          <Left>0.78761cm</Left>
+          <Height>0.6cm</Height>
+          <Width>1.52104cm</Width>
+          <ZIndex>8</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox27">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=First(Fields!kontakt.Value, "DataSetPutnik")</Value>
+                  <Style>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox27</rd:DefaultName>
+          <Top>5.06291cm</Top>
+          <Left>2.30865cm</Left>
+          <Height>0.6cm</Height>
+          <Width>2.5cm</Width>
+          <ZIndex>9</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox28">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Račun izdao:</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox28</rd:DefaultName>
+          <Top>3.5016cm</Top>
+          <Left>10.53719cm</Left>
+          <Height>0.6cm</Height>
+          <Width>2.5cm</Width>
+          <ZIndex>10</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox29">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=First(Fields!ime.Value, "DataSetZaposlenik") + "  " + First(Fields!prezime.Value, "DataSetZaposlenik")</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox29</rd:DefaultName>
+          <Top>3.5016cm</Top>
+          <Left>12.93136cm</Left>
+          <Height>0.6cm</Height>
+          <Width>2.89687cm</Width>
+          <ZIndex>11</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+      </ReportItems>
+      <Style>
+        <Border>
+          <Style>None</Style>
+        </Border>
+      </Style>
+    </PageHeader>
+    <PageFooter>
+      <Height>2.54cm</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <Style>
+        <Border>
+          <Style>None</Style>
+        </Border>
+      </Style>
+    </PageFooter>
+    <PageHeight>29.7cm</PageHeight>
+    <PageWidth>21cm</PageWidth>
+    <LeftMargin>2cm</LeftMargin>
+    <RightMargin>2cm</RightMargin>
+    <TopMargin>2cm</TopMargin>
+    <BottomMargin>2cm</BottomMargin>
+    <ColumnSpacing>0.13cm</ColumnSpacing>
+    <Style />
+  </Page>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DB">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>bf97a48f-c808-4941-a300-583ab3cfde7e</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DataSetPutovanje">
+      <Query>
+        <DataSourceName>DB</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="broj_osoba">
+          <DataField>broj_osoba</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="cijena">
+          <DataField>cijena</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="datumvrijeme_polaska">
+          <DataField>datumvrijeme_polaska</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="datumvrijeme_povratka">
+          <DataField>datumvrijeme_povratka</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="destinacija">
+          <DataField>destinacija</DataField>
+          <rd:TypeName>DB.destinacija</rd:TypeName>
+        </Field>
+        <Field Name="destinacija_FK">
+          <DataField>destinacija_FK</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="naziv">
+          <DataField>naziv</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="prijevozno_poduzece">
+          <DataField>prijevozno_poduzece</DataField>
+          <rd:TypeName>DB.prijevozno_poduzece</rd:TypeName>
+        </Field>
+        <Field Name="prijevozno_poduzece_FK">
+          <DataField>prijevozno_poduzece_FK</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="putovanje_id">
+          <DataField>putovanje_id</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="zaposlenik">
+          <DataField>zaposlenik</DataField>
+          <rd:TypeName>DB.zaposlenik</rd:TypeName>
+        </Field>
+        <Field Name="zaposlenik_FK">
+          <DataField>zaposlenik_FK</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>DB</rd:DataSetName>
+        <rd:TableName>putovanje</rd:TableName>
+        <rd:ObjectDataSourceType>DB.putovanje, DB, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+      </rd:DataSetInfo>
+    </DataSet>
+    <DataSet Name="DataSetRacun">
+      <Query>
+        <DataSourceName>DB</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="datumvrijeme_izdavanja">
+          <DataField>datumvrijeme_izdavanja</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="racun_id">
+          <DataField>racun_id</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="rezervacija">
+          <DataField>rezervacija</DataField>
+          <rd:TypeName>DB.rezervacija</rd:TypeName>
+        </Field>
+        <Field Name="rezervacija_FK">
+          <DataField>rezervacija_FK</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ukupna_cijena">
+          <DataField>ukupna_cijena</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="zaposlenik_FK">
+          <DataField>zaposlenik_FK</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>DB</rd:DataSetName>
+        <rd:TableName>racun</rd:TableName>
+        <rd:ObjectDataSourceType>DB.racun, DB, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+      </rd:DataSetInfo>
+    </DataSet>
+    <DataSet Name="DataSetDodatneAktivnosti">
+      <Query>
+        <DataSourceName>DB</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="cijena">
+          <DataField>cijena</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="datumvrijeme_pocetka">
+          <DataField>datumvrijeme_pocetka</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="datumvrijeme_zavrsetka">
+          <DataField>datumvrijeme_zavrsetka</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="dodatna_aktivnost_id">
+          <DataField>dodatna_aktivnost_id</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="naziv">
+          <DataField>naziv</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="putovanje">
+          <DataField>putovanje</DataField>
+          <rd:TypeName>DB.putovanje</rd:TypeName>
+        </Field>
+        <Field Name="putovanje_FK">
+          <DataField>putovanje_FK</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>DB</rd:DataSetName>
+        <rd:TableName>dodatna_aktivnost</rd:TableName>
+        <rd:ObjectDataSourceType>DB.dodatna_aktivnost, DB, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+      </rd:DataSetInfo>
+    </DataSet>
+    <DataSet Name="DataSetPutnik">
+      <Query>
+        <DataSourceName>DB</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="email">
+          <DataField>email</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ime">
+          <DataField>ime</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="kontakt">
+          <DataField>kontakt</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="prezime">
+          <DataField>prezime</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="putnik_id">
+          <DataField>putnik_id</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>DB</rd:DataSetName>
+        <rd:TableName>putnik</rd:TableName>
+        <rd:ObjectDataSourceType>DB.putnik, DB, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+      </rd:DataSetInfo>
+    </DataSet>
+    <DataSet Name="DataSetZaposlenik">
+      <Query>
+        <DataSourceName>DB</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="ime">
+          <DataField>ime</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="korisnicko_ime">
+          <DataField>korisnicko_ime</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="kriptirana_lozinka">
+          <DataField>kriptirana_lozinka</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="lozinka">
+          <DataField>lozinka</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="prezime">
+          <DataField>prezime</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="razina_prava">
+          <DataField>razina_prava</DataField>
+          <rd:TypeName>DB.razina_prava</rd:TypeName>
+        </Field>
+        <Field Name="razina_prava_FK">
+          <DataField>razina_prava_FK</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="status">
+          <DataField>status</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="zaposlenik_id">
+          <DataField>zaposlenik_id</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>DB</rd:DataSetName>
+        <rd:TableName>zaposlenik</rd:TableName>
+        <rd:ObjectDataSourceType>DB.zaposlenik, DB, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+      </rd:DataSetInfo>
+    </DataSet>
+  </DataSets>
+  <EmbeddedImages>
+    <EmbeddedImage Name="Screenshot_28">
+      <MIMEType>image/jpeg</MIMEType>
+      <ImageData>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</ImageData>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <rd:ReportUnitType>Cm</rd:ReportUnitType>
+  <rd:ReportID>d2ed57be-cc5a-45da-b82c-472ebd2217f9</rd:ReportID>
+</Report>

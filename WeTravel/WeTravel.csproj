@@ -39,6 +39,21 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.1000.523\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.1000.523\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.1000.523\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.1000.523\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.1000.523\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
@@ -76,11 +91,23 @@
     <Compile Include="FormaNoviKorisnickiRacun.Designer.cs">
       <DependentUpon>FormaNoviKorisnickiRacun.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormaNoviRacun.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormaNoviRacun.Designer.cs">
+      <DependentUpon>FormaNoviRacun.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormaPrijava.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormaPrijava.Designer.cs">
       <DependentUpon>FormaPrijava.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormaRacun.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormaRacun.Designer.cs">
+      <DependentUpon>FormaRacun.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -105,8 +132,14 @@
     <EmbeddedResource Include="FormaNoviKorisnickiRacun.resx">
       <DependentUpon>FormaNoviKorisnickiRacun.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormaNoviRacun.resx">
+      <DependentUpon>FormaNoviRacun.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormaPrijava.resx">
       <DependentUpon>FormaPrijava.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormaRacun.resx">
+      <DependentUpon>FormaRacun.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -117,8 +150,32 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Report1.rdlc" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\DB.destinacija.datasource" />
+    <None Include="Properties\DataSources\DB.dodatna_aktivnost.datasource" />
+    <None Include="Properties\DataSources\DB.PogledRezervacijaDodatnihAktivnosti.datasource" />
+    <None Include="Properties\DataSources\DB.prijava.datasource" />
+    <None Include="Properties\DataSources\DB.prijevozno_poduzece.datasource" />
+    <None Include="Properties\DataSources\DB.putnik.datasource" />
+    <None Include="Properties\DataSources\DB.putovanje.datasource" />
+    <None Include="Properties\DataSources\DB.racun.datasource" />
+    <None Include="Properties\DataSources\DB.razina_prava.datasource" />
+    <None Include="Properties\DataSources\DB.rezervacija.datasource" />
+    <None Include="Properties\DataSources\DB.sysdiagrams.datasource" />
     <None Include="Properties\DataSources\DB.zaposlenik.datasource" />
+    <None Include="Properties\DataSources\EntitiesWeTravel.datasource" />
+    <None Include="Properties\DataSources\FormaAdministracijaRacuna.datasource" />
+    <None Include="Properties\DataSources\FormaGlavniIzbornik.datasource" />
+    <None Include="Properties\DataSources\FormaNoviKorisnickiRacun.datasource" />
+    <None Include="Properties\DataSources\FormaNoviRacun.datasource" />
+    <None Include="Properties\DataSources\FormaPrijava.datasource" />
+    <None Include="Properties\DataSources\FormaRacun.datasource" />
+    <None Include="Properties\DataSources\Program.datasource" />
+    <None Include="Properties\DataSources\Sesija.datasource" />
+    <None Include="Properties\DataSources\SqlServerTypes.Utilities.datasource" />
+    <None Include="Properties\DataSources\WeTravel.Properties.Resources.datasource" />
+    <None Include="Properties\DataSources\WeTravel.Properties.Settings.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
