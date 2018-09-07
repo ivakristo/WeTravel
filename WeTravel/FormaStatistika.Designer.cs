@@ -29,12 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormaStatistika));
             this.dataGridViewStatistika = new System.Windows.Forms.DataGridView();
-            this.chartStatistika = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.putovanjeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.putovanjeidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nazivDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datumvrijemepolaskaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,9 +48,11 @@
             this.prijevoznopoduzeceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.zaposlenikDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rezervacijaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.putovanjeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.chartStatistika = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStatistika)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartStatistika)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.putovanjeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartStatistika)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewStatistika
@@ -83,26 +84,6 @@
             this.dataGridViewStatistika.Size = new System.Drawing.Size(711, 144);
             this.dataGridViewStatistika.TabIndex = 1;
             this.dataGridViewStatistika.SelectionChanged += new System.EventHandler(this.dataGridViewStatistika_SelectionChanged);
-            // 
-            // chartStatistika
-            // 
-            chartArea3.Name = "ChartArea1";
-            this.chartStatistika.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chartStatistika.Legends.Add(legend3);
-            this.chartStatistika.Location = new System.Drawing.Point(31, 206);
-            this.chartStatistika.Name = "chartStatistika";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Putovanje";
-            this.chartStatistika.Series.Add(series3);
-            this.chartStatistika.Size = new System.Drawing.Size(445, 302);
-            this.chartStatistika.TabIndex = 1;
-            this.chartStatistika.Text = "chart1";
-            // 
-            // putovanjeBindingSource
-            // 
-            this.putovanjeBindingSource.DataSource = typeof(DB.putovanje);
             // 
             // putovanjeidDataGridViewTextBoxColumn
             // 
@@ -214,6 +195,26 @@
             this.rezervacijaDataGridViewTextBoxColumn.ReadOnly = true;
             this.rezervacijaDataGridViewTextBoxColumn.Visible = false;
             // 
+            // putovanjeBindingSource
+            // 
+            this.putovanjeBindingSource.DataSource = typeof(DB.putovanje);
+            // 
+            // chartStatistika
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chartStatistika.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartStatistika.Legends.Add(legend1);
+            this.chartStatistika.Location = new System.Drawing.Point(31, 206);
+            this.chartStatistika.Name = "chartStatistika";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Putovanje";
+            this.chartStatistika.Series.Add(series1);
+            this.chartStatistika.Size = new System.Drawing.Size(445, 302);
+            this.chartStatistika.TabIndex = 1;
+            this.chartStatistika.Text = "chart1";
+            // 
             // FormaStatistika
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -221,12 +222,13 @@
             this.ClientSize = new System.Drawing.Size(774, 559);
             this.Controls.Add(this.chartStatistika);
             this.Controls.Add(this.dataGridViewStatistika);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormaStatistika";
             this.Text = "Statistika";
             this.Load += new System.EventHandler(this.FormaStatistika_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStatistika)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartStatistika)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.putovanjeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartStatistika)).EndInit();
             this.ResumeLayout(false);
 
         }

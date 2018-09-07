@@ -29,19 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormaNoviRacun));
             this.labelPretrazivanjePutnika = new System.Windows.Forms.Label();
             this.textBoxPretrazivanjePutnika = new System.Windows.Forms.TextBox();
             this.buttonIzdavanjeRacuna = new System.Windows.Forms.Button();
             this.dataGridViewRezervacijePutovanja = new System.Windows.Forms.DataGridView();
-            this.dataGridViewPutnik = new System.Windows.Forms.DataGridView();
-            this.putnikBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.rezervacijaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.putnikidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.imeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prezimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.kontaktDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rezervacijaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rezervacijaidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.putovanjeFKDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.putnikFKDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,10 +41,19 @@
             this.putovanjeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.racunDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dodatnaaktivnostDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rezervacijaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewPutnik = new System.Windows.Forms.DataGridView();
+            this.putnikidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.imeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prezimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kontaktDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rezervacijaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.putnikBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRezervacijePutovanja)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rezervacijaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPutnik)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.putnikBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rezervacijaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // labelPretrazivanjePutnika
@@ -104,79 +105,6 @@
             this.dataGridViewRezervacijePutovanja.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewRezervacijePutovanja.Size = new System.Drawing.Size(422, 131);
             this.dataGridViewRezervacijePutovanja.TabIndex = 12;
-            // 
-            // dataGridViewPutnik
-            // 
-            this.dataGridViewPutnik.AllowUserToAddRows = false;
-            this.dataGridViewPutnik.AllowUserToDeleteRows = false;
-            this.dataGridViewPutnik.AutoGenerateColumns = false;
-            this.dataGridViewPutnik.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewPutnik.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.putnikidDataGridViewTextBoxColumn,
-            this.imeDataGridViewTextBoxColumn,
-            this.prezimeDataGridViewTextBoxColumn,
-            this.emailDataGridViewTextBoxColumn,
-            this.kontaktDataGridViewTextBoxColumn,
-            this.rezervacijaDataGridViewTextBoxColumn});
-            this.dataGridViewPutnik.DataSource = this.putnikBindingSource;
-            this.dataGridViewPutnik.Location = new System.Drawing.Point(12, 63);
-            this.dataGridViewPutnik.Name = "dataGridViewPutnik";
-            this.dataGridViewPutnik.ReadOnly = true;
-            this.dataGridViewPutnik.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewPutnik.Size = new System.Drawing.Size(543, 162);
-            this.dataGridViewPutnik.TabIndex = 11;
-            this.dataGridViewPutnik.SelectionChanged += new System.EventHandler(this.dataGridViewPutnik_SelectionChanged);
-            // 
-            // putnikBindingSource
-            // 
-            this.putnikBindingSource.DataSource = typeof(DB.putnik);
-            // 
-            // rezervacijaBindingSource
-            // 
-            this.rezervacijaBindingSource.DataSource = typeof(DB.rezervacija);
-            // 
-            // putnikidDataGridViewTextBoxColumn
-            // 
-            this.putnikidDataGridViewTextBoxColumn.DataPropertyName = "putnik_id";
-            this.putnikidDataGridViewTextBoxColumn.HeaderText = "Putnik ID";
-            this.putnikidDataGridViewTextBoxColumn.Name = "putnikidDataGridViewTextBoxColumn";
-            this.putnikidDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // imeDataGridViewTextBoxColumn
-            // 
-            this.imeDataGridViewTextBoxColumn.DataPropertyName = "ime";
-            this.imeDataGridViewTextBoxColumn.HeaderText = "Ime";
-            this.imeDataGridViewTextBoxColumn.Name = "imeDataGridViewTextBoxColumn";
-            this.imeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // prezimeDataGridViewTextBoxColumn
-            // 
-            this.prezimeDataGridViewTextBoxColumn.DataPropertyName = "prezime";
-            this.prezimeDataGridViewTextBoxColumn.HeaderText = "Prezime";
-            this.prezimeDataGridViewTextBoxColumn.Name = "prezimeDataGridViewTextBoxColumn";
-            this.prezimeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // emailDataGridViewTextBoxColumn
-            // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // kontaktDataGridViewTextBoxColumn
-            // 
-            this.kontaktDataGridViewTextBoxColumn.DataPropertyName = "kontakt";
-            this.kontaktDataGridViewTextBoxColumn.HeaderText = "Kontakt";
-            this.kontaktDataGridViewTextBoxColumn.Name = "kontaktDataGridViewTextBoxColumn";
-            this.kontaktDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // rezervacijaDataGridViewTextBoxColumn
-            // 
-            this.rezervacijaDataGridViewTextBoxColumn.DataPropertyName = "rezervacija";
-            this.rezervacijaDataGridViewTextBoxColumn.HeaderText = "rezervacija";
-            this.rezervacijaDataGridViewTextBoxColumn.Name = "rezervacijaDataGridViewTextBoxColumn";
-            this.rezervacijaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.rezervacijaDataGridViewTextBoxColumn.Visible = false;
             // 
             // rezervacijaidDataGridViewTextBoxColumn
             // 
@@ -232,6 +160,79 @@
             this.dodatnaaktivnostDataGridViewTextBoxColumn.ReadOnly = true;
             this.dodatnaaktivnostDataGridViewTextBoxColumn.Visible = false;
             // 
+            // rezervacijaBindingSource
+            // 
+            this.rezervacijaBindingSource.DataSource = typeof(DB.rezervacija);
+            // 
+            // dataGridViewPutnik
+            // 
+            this.dataGridViewPutnik.AllowUserToAddRows = false;
+            this.dataGridViewPutnik.AllowUserToDeleteRows = false;
+            this.dataGridViewPutnik.AutoGenerateColumns = false;
+            this.dataGridViewPutnik.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewPutnik.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.putnikidDataGridViewTextBoxColumn,
+            this.imeDataGridViewTextBoxColumn,
+            this.prezimeDataGridViewTextBoxColumn,
+            this.emailDataGridViewTextBoxColumn,
+            this.kontaktDataGridViewTextBoxColumn,
+            this.rezervacijaDataGridViewTextBoxColumn});
+            this.dataGridViewPutnik.DataSource = this.putnikBindingSource;
+            this.dataGridViewPutnik.Location = new System.Drawing.Point(12, 63);
+            this.dataGridViewPutnik.Name = "dataGridViewPutnik";
+            this.dataGridViewPutnik.ReadOnly = true;
+            this.dataGridViewPutnik.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewPutnik.Size = new System.Drawing.Size(543, 162);
+            this.dataGridViewPutnik.TabIndex = 11;
+            this.dataGridViewPutnik.SelectionChanged += new System.EventHandler(this.dataGridViewPutnik_SelectionChanged);
+            // 
+            // putnikidDataGridViewTextBoxColumn
+            // 
+            this.putnikidDataGridViewTextBoxColumn.DataPropertyName = "putnik_id";
+            this.putnikidDataGridViewTextBoxColumn.HeaderText = "Putnik ID";
+            this.putnikidDataGridViewTextBoxColumn.Name = "putnikidDataGridViewTextBoxColumn";
+            this.putnikidDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // imeDataGridViewTextBoxColumn
+            // 
+            this.imeDataGridViewTextBoxColumn.DataPropertyName = "ime";
+            this.imeDataGridViewTextBoxColumn.HeaderText = "Ime";
+            this.imeDataGridViewTextBoxColumn.Name = "imeDataGridViewTextBoxColumn";
+            this.imeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // prezimeDataGridViewTextBoxColumn
+            // 
+            this.prezimeDataGridViewTextBoxColumn.DataPropertyName = "prezime";
+            this.prezimeDataGridViewTextBoxColumn.HeaderText = "Prezime";
+            this.prezimeDataGridViewTextBoxColumn.Name = "prezimeDataGridViewTextBoxColumn";
+            this.prezimeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // kontaktDataGridViewTextBoxColumn
+            // 
+            this.kontaktDataGridViewTextBoxColumn.DataPropertyName = "kontakt";
+            this.kontaktDataGridViewTextBoxColumn.HeaderText = "Kontakt";
+            this.kontaktDataGridViewTextBoxColumn.Name = "kontaktDataGridViewTextBoxColumn";
+            this.kontaktDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // rezervacijaDataGridViewTextBoxColumn
+            // 
+            this.rezervacijaDataGridViewTextBoxColumn.DataPropertyName = "rezervacija";
+            this.rezervacijaDataGridViewTextBoxColumn.HeaderText = "rezervacija";
+            this.rezervacijaDataGridViewTextBoxColumn.Name = "rezervacijaDataGridViewTextBoxColumn";
+            this.rezervacijaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.rezervacijaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // putnikBindingSource
+            // 
+            this.putnikBindingSource.DataSource = typeof(DB.putnik);
+            // 
             // FormaNoviRacun
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -242,13 +243,14 @@
             this.Controls.Add(this.buttonIzdavanjeRacuna);
             this.Controls.Add(this.dataGridViewRezervacijePutovanja);
             this.Controls.Add(this.dataGridViewPutnik);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormaNoviRacun";
             this.Text = "Izdavanje računa";
             this.Load += new System.EventHandler(this.FormaNoviRacun_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRezervacijePutovanja)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rezervacijaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPutnik)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.putnikBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rezervacijaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

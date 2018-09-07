@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormaPregledRacuna));
             this.buttonPregledRacuna = new System.Windows.Forms.Button();
             this.dataGridViewIzdaniRacuni = new System.Windows.Forms.DataGridView();
             this.racunBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -121,6 +122,7 @@
             this.ClientSize = new System.Drawing.Size(628, 253);
             this.Controls.Add(this.buttonPregledRacuna);
             this.Controls.Add(this.dataGridViewIzdaniRacuni);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormaPregledRacuna";
             this.Text = "Pregled izdanih računa";
             this.Load += new System.EventHandler(this.FormaPregledRacuna_Load);

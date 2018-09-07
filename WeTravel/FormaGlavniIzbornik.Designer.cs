@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormaGlavniIzbornik));
             this.buttonPregledRacuna = new System.Windows.Forms.Button();
             this.buttonStatistika = new System.Windows.Forms.Button();
             this.buttonIzdavanjeRacuna = new System.Windows.Forms.Button();
@@ -100,8 +101,9 @@
             this.Controls.Add(this.buttonIzdavanjeRacuna);
             this.Controls.Add(this.buttonOdjava);
             this.Controls.Add(this.buttonAdministracijaRacuna);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormaGlavniIzbornik";
-            this.Text = "FormaGlavniIzbornik";
+            this.Text = "Glavni izbornik";
             this.Load += new System.EventHandler(this.FormaGlavniIzbornik_Load);
             this.ResumeLayout(false);
 

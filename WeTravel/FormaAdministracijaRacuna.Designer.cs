@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormaAdministracijaRacuna));
             this.dataGridViewPrikazZaposlenika = new System.Windows.Forms.DataGridView();
             this.zaposlenikidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.imeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -202,6 +203,7 @@
             this.Controls.Add(this.buttonPromjenaStatusa);
             this.Controls.Add(this.buttonUrediKorisnickiRacun);
             this.Controls.Add(this.buttonNoviKorisnickiRacun);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormaAdministracijaRacuna";
             this.Text = "Administracija korisničkih računa";
             this.Load += new System.EventHandler(this.FormaAdministracijaRacuna_Load);

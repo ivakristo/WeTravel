@@ -41,9 +41,9 @@
             // pictureBoxLogo
             // 
             this.pictureBoxLogo.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLogo.Image")));
-            this.pictureBoxLogo.Location = new System.Drawing.Point(102, 29);
+            this.pictureBoxLogo.Location = new System.Drawing.Point(71, 12);
             this.pictureBoxLogo.Name = "pictureBoxLogo";
-            this.pictureBoxLogo.Size = new System.Drawing.Size(212, 145);
+            this.pictureBoxLogo.Size = new System.Drawing.Size(275, 181);
             this.pictureBoxLogo.TabIndex = 11;
             this.pictureBoxLogo.TabStop = false;
             // 
@@ -104,8 +104,9 @@
             this.Controls.Add(this.labelKorisnickoIme);
             this.Controls.Add(this.textBoxLozinka);
             this.Controls.Add(this.textBoxKorisnickoIme);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormaPrijava";
-            this.Text = "FormaPrijava";
+            this.Text = "Prijava";
             this.Load += new System.EventHandler(this.FormaPrijava_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormaPrijava_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
