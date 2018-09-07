@@ -46,6 +46,8 @@ namespace WeTravel
             if (brojac == 1)
             {
                 this.Hide();
+                FormaGlavniIzbornik formaIzbornik = new FormaGlavniIzbornik();
+                formaIzbornik.ShowDialog();
                 this.Close();
             }
             else

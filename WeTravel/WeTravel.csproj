@@ -58,6 +58,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormaGlavniIzbornik.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormaGlavniIzbornik.Designer.cs">
+      <DependentUpon>FormaGlavniIzbornik.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormaPrijava.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>WeTravelModel.edmx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FormaGlavniIzbornik.resx">
+      <DependentUpon>FormaGlavniIzbornik.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormaPrijava.resx">
       <DependentUpon>FormaPrijava.cs</DependentUpon>
     </EmbeddedResource>
