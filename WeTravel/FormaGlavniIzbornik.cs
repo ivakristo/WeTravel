@@ -32,7 +32,8 @@ namespace WeTravel
 
         private void buttonStatistika_Click(object sender, EventArgs e)
         {
-
+            FormaStatistika formaStatistika = new FormaStatistika();
+            formaStatistika.ShowDialog();
         }
 
         private void buttonIzdavanjeRacuna_Click(object sender, EventArgs e)
