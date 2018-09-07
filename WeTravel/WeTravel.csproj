@@ -98,6 +98,12 @@
     <Compile Include="FormaNoviRacun.Designer.cs">
       <DependentUpon>FormaNoviRacun.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormaPregledRacuna.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormaPregledRacuna.Designer.cs">
+      <DependentUpon>FormaPregledRacuna.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormaPrijava.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,6 +147,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormaNoviRacun.resx">
       <DependentUpon>FormaNoviRacun.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormaPregledRacuna.resx">
+      <DependentUpon>FormaPregledRacuna.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormaPrijava.resx">
       <DependentUpon>FormaPrijava.cs</DependentUpon>

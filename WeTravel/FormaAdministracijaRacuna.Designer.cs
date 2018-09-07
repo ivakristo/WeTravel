@@ -30,9 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridViewPrikazZaposlenika = new System.Windows.Forms.DataGridView();
-            this.buttonPromjenaStatusa = new System.Windows.Forms.Button();
-            this.buttonUrediKorisnickiRacun = new System.Windows.Forms.Button();
-            this.buttonNoviKorisnickiRacun = new System.Windows.Forms.Button();
             this.zaposlenikidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.imeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prezimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,6 +42,9 @@
             this.putovanjeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.razinapravaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.zaposlenikBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.buttonPromjenaStatusa = new System.Windows.Forms.Button();
+            this.buttonUrediKorisnickiRacun = new System.Windows.Forms.Button();
+            this.buttonNoviKorisnickiRacun = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPrikazZaposlenika)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.zaposlenikBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -72,8 +72,93 @@
             this.dataGridViewPrikazZaposlenika.Name = "dataGridViewPrikazZaposlenika";
             this.dataGridViewPrikazZaposlenika.ReadOnly = true;
             this.dataGridViewPrikazZaposlenika.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewPrikazZaposlenika.Size = new System.Drawing.Size(746, 231);
+            this.dataGridViewPrikazZaposlenika.Size = new System.Drawing.Size(763, 231);
             this.dataGridViewPrikazZaposlenika.TabIndex = 8;
+            // 
+            // zaposlenikidDataGridViewTextBoxColumn
+            // 
+            this.zaposlenikidDataGridViewTextBoxColumn.DataPropertyName = "zaposlenik_id";
+            this.zaposlenikidDataGridViewTextBoxColumn.HeaderText = "Zaposlenik ID";
+            this.zaposlenikidDataGridViewTextBoxColumn.Name = "zaposlenikidDataGridViewTextBoxColumn";
+            this.zaposlenikidDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // imeDataGridViewTextBoxColumn
+            // 
+            this.imeDataGridViewTextBoxColumn.DataPropertyName = "ime";
+            this.imeDataGridViewTextBoxColumn.HeaderText = "Ime";
+            this.imeDataGridViewTextBoxColumn.Name = "imeDataGridViewTextBoxColumn";
+            this.imeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // prezimeDataGridViewTextBoxColumn
+            // 
+            this.prezimeDataGridViewTextBoxColumn.DataPropertyName = "prezime";
+            this.prezimeDataGridViewTextBoxColumn.HeaderText = "Prezime";
+            this.prezimeDataGridViewTextBoxColumn.Name = "prezimeDataGridViewTextBoxColumn";
+            this.prezimeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // korisnickoimeDataGridViewTextBoxColumn
+            // 
+            this.korisnickoimeDataGridViewTextBoxColumn.DataPropertyName = "korisnicko_ime";
+            this.korisnickoimeDataGridViewTextBoxColumn.HeaderText = "Korisničko ime";
+            this.korisnickoimeDataGridViewTextBoxColumn.Name = "korisnickoimeDataGridViewTextBoxColumn";
+            this.korisnickoimeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // lozinkaDataGridViewTextBoxColumn
+            // 
+            this.lozinkaDataGridViewTextBoxColumn.DataPropertyName = "lozinka";
+            this.lozinkaDataGridViewTextBoxColumn.HeaderText = "Lozinka";
+            this.lozinkaDataGridViewTextBoxColumn.Name = "lozinkaDataGridViewTextBoxColumn";
+            this.lozinkaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.lozinkaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // kriptiranalozinkaDataGridViewTextBoxColumn
+            // 
+            this.kriptiranalozinkaDataGridViewTextBoxColumn.DataPropertyName = "kriptirana_lozinka";
+            this.kriptiranalozinkaDataGridViewTextBoxColumn.HeaderText = "Kriptirana lozinka";
+            this.kriptiranalozinkaDataGridViewTextBoxColumn.Name = "kriptiranalozinkaDataGridViewTextBoxColumn";
+            this.kriptiranalozinkaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // razinapravaFKDataGridViewTextBoxColumn
+            // 
+            this.razinapravaFKDataGridViewTextBoxColumn.DataPropertyName = "razina_prava_FK";
+            this.razinapravaFKDataGridViewTextBoxColumn.HeaderText = "Razina prava";
+            this.razinapravaFKDataGridViewTextBoxColumn.Name = "razinapravaFKDataGridViewTextBoxColumn";
+            this.razinapravaFKDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // statusDataGridViewTextBoxColumn
+            // 
+            this.statusDataGridViewTextBoxColumn.DataPropertyName = "status";
+            this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
+            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
+            this.statusDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // prijavaDataGridViewTextBoxColumn
+            // 
+            this.prijavaDataGridViewTextBoxColumn.DataPropertyName = "prijava";
+            this.prijavaDataGridViewTextBoxColumn.HeaderText = "prijava";
+            this.prijavaDataGridViewTextBoxColumn.Name = "prijavaDataGridViewTextBoxColumn";
+            this.prijavaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.prijavaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // putovanjeDataGridViewTextBoxColumn
+            // 
+            this.putovanjeDataGridViewTextBoxColumn.DataPropertyName = "putovanje";
+            this.putovanjeDataGridViewTextBoxColumn.HeaderText = "putovanje";
+            this.putovanjeDataGridViewTextBoxColumn.Name = "putovanjeDataGridViewTextBoxColumn";
+            this.putovanjeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.putovanjeDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // razinapravaDataGridViewTextBoxColumn
+            // 
+            this.razinapravaDataGridViewTextBoxColumn.DataPropertyName = "razina_prava";
+            this.razinapravaDataGridViewTextBoxColumn.HeaderText = "razina_prava";
+            this.razinapravaDataGridViewTextBoxColumn.Name = "razinapravaDataGridViewTextBoxColumn";
+            this.razinapravaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.razinapravaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // zaposlenikBindingSource
+            // 
+            this.zaposlenikBindingSource.DataSource = typeof(DB.zaposlenik);
             // 
             // buttonPromjenaStatusa
             // 
@@ -108,85 +193,11 @@
             this.buttonNoviKorisnickiRacun.UseVisualStyleBackColor = false;
             this.buttonNoviKorisnickiRacun.Click += new System.EventHandler(this.buttonNoviKorisnickiRacun_Click);
             // 
-            // zaposlenikidDataGridViewTextBoxColumn
-            // 
-            this.zaposlenikidDataGridViewTextBoxColumn.DataPropertyName = "zaposlenik_id";
-            this.zaposlenikidDataGridViewTextBoxColumn.HeaderText = "Zaposlenik ID";
-            this.zaposlenikidDataGridViewTextBoxColumn.Name = "zaposlenikidDataGridViewTextBoxColumn";
-            // 
-            // imeDataGridViewTextBoxColumn
-            // 
-            this.imeDataGridViewTextBoxColumn.DataPropertyName = "ime";
-            this.imeDataGridViewTextBoxColumn.HeaderText = "Ime";
-            this.imeDataGridViewTextBoxColumn.Name = "imeDataGridViewTextBoxColumn";
-            // 
-            // prezimeDataGridViewTextBoxColumn
-            // 
-            this.prezimeDataGridViewTextBoxColumn.DataPropertyName = "prezime";
-            this.prezimeDataGridViewTextBoxColumn.HeaderText = "Prezime";
-            this.prezimeDataGridViewTextBoxColumn.Name = "prezimeDataGridViewTextBoxColumn";
-            // 
-            // korisnickoimeDataGridViewTextBoxColumn
-            // 
-            this.korisnickoimeDataGridViewTextBoxColumn.DataPropertyName = "korisnicko_ime";
-            this.korisnickoimeDataGridViewTextBoxColumn.HeaderText = "Korisničko ime";
-            this.korisnickoimeDataGridViewTextBoxColumn.Name = "korisnickoimeDataGridViewTextBoxColumn";
-            // 
-            // lozinkaDataGridViewTextBoxColumn
-            // 
-            this.lozinkaDataGridViewTextBoxColumn.DataPropertyName = "lozinka";
-            this.lozinkaDataGridViewTextBoxColumn.HeaderText = "Lozinka";
-            this.lozinkaDataGridViewTextBoxColumn.Name = "lozinkaDataGridViewTextBoxColumn";
-            this.lozinkaDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // kriptiranalozinkaDataGridViewTextBoxColumn
-            // 
-            this.kriptiranalozinkaDataGridViewTextBoxColumn.DataPropertyName = "kriptirana_lozinka";
-            this.kriptiranalozinkaDataGridViewTextBoxColumn.HeaderText = "Kriptirana lozinka";
-            this.kriptiranalozinkaDataGridViewTextBoxColumn.Name = "kriptiranalozinkaDataGridViewTextBoxColumn";
-            // 
-            // razinapravaFKDataGridViewTextBoxColumn
-            // 
-            this.razinapravaFKDataGridViewTextBoxColumn.DataPropertyName = "razina_prava_FK";
-            this.razinapravaFKDataGridViewTextBoxColumn.HeaderText = "Razina prava";
-            this.razinapravaFKDataGridViewTextBoxColumn.Name = "razinapravaFKDataGridViewTextBoxColumn";
-            // 
-            // statusDataGridViewTextBoxColumn
-            // 
-            this.statusDataGridViewTextBoxColumn.DataPropertyName = "status";
-            this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
-            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
-            // 
-            // prijavaDataGridViewTextBoxColumn
-            // 
-            this.prijavaDataGridViewTextBoxColumn.DataPropertyName = "prijava";
-            this.prijavaDataGridViewTextBoxColumn.HeaderText = "prijava";
-            this.prijavaDataGridViewTextBoxColumn.Name = "prijavaDataGridViewTextBoxColumn";
-            this.prijavaDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // putovanjeDataGridViewTextBoxColumn
-            // 
-            this.putovanjeDataGridViewTextBoxColumn.DataPropertyName = "putovanje";
-            this.putovanjeDataGridViewTextBoxColumn.HeaderText = "putovanje";
-            this.putovanjeDataGridViewTextBoxColumn.Name = "putovanjeDataGridViewTextBoxColumn";
-            this.putovanjeDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // razinapravaDataGridViewTextBoxColumn
-            // 
-            this.razinapravaDataGridViewTextBoxColumn.DataPropertyName = "razina_prava";
-            this.razinapravaDataGridViewTextBoxColumn.HeaderText = "razina_prava";
-            this.razinapravaDataGridViewTextBoxColumn.Name = "razinapravaDataGridViewTextBoxColumn";
-            this.razinapravaDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // zaposlenikBindingSource
-            // 
-            this.zaposlenikBindingSource.DataSource = typeof(DB.zaposlenik);
-            // 
             // FormaAdministracijaRacuna
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(878, 389);
+            this.ClientSize = new System.Drawing.Size(819, 348);
             this.Controls.Add(this.dataGridViewPrikazZaposlenika);
             this.Controls.Add(this.buttonPromjenaStatusa);
             this.Controls.Add(this.buttonUrediKorisnickiRacun);

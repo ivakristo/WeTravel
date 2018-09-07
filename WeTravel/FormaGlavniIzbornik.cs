@@ -27,7 +27,8 @@ namespace WeTravel
 
         private void buttonPregledRacuna_Click(object sender, EventArgs e)
         {
-
+            FormaPregledRacuna formaPregledRacuna = new FormaPregledRacuna();
+            formaPregledRacuna.ShowDialog();
         }
 
         private void buttonStatistika_Click(object sender, EventArgs e)
