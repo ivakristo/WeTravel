@@ -328,7 +328,3 @@ ASALocalRun/
 
 # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
-
-# Include DLLs if they're in the NuGet packages directory
-!/WeTravel/SqlServerTypes/x64/*.dll
-!/WeTravel/SqlServerTypes/x86/*.dll
