@@ -42,7 +42,8 @@ namespace WeTravel
 
         private void buttonAdministracijaRacuna_Click(object sender, EventArgs e)
         {
-
+            FormaAdministracijaRacuna formaAdminiRacun = new FormaAdministracijaRacuna();
+            formaAdminiRacun.ShowDialog();
         }
 
         private void FormaGlavniIzbornik_Load(object sender, EventArgs e)
