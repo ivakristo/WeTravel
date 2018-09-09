@@ -24,6 +24,19 @@ namespace WeTravel
             using (var bp = new EntitiesWeTravel())
             {
                 listaRacuna = new BindingList<racun>(bp.racun.ToList());
+                var listaRacunaDetalji = (from rac in bp.racun
+                                      join zap in bp.zaposlenik on rac.zaposlenik_FK equals zap.zaposlenik_id
+                                      where rac.zaposlenik_FK == zap.zaposlenik_id
+                                      select new
+                                      {
+                                          racun_id = rac.racun_id,
+                                          zaposlenik_FK= zap.ime + " " + zap.prezime,
+                                          datumvrijeme_izdavanja=rac.datumvrijeme_izdavanja,
+                                          ukupna_cijena=rac.ukupna_cijena,
+                                          rezervacija_FK=rac.rezervacija_FK
+                                      });
+                dataGridViewIzdaniRacuni.DataSource = listaRacunaDetalji.ToList();
+
             }
             racunBindingSource.DataSource = listaRacuna;
         }

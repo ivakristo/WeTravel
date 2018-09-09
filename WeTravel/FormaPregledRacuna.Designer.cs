@@ -32,13 +32,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormaPregledRacuna));
             this.buttonPregledRacuna = new System.Windows.Forms.Button();
             this.dataGridViewIzdaniRacuni = new System.Windows.Forms.DataGridView();
+            this.racunBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.racunidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.zaposlenikFKDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datumvrijemeizdavanjaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ukupnacijenaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rezervacijaFKDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rezervacijaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.racunBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewIzdaniRacuni)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.racunBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -72,6 +72,10 @@
             this.dataGridViewIzdaniRacuni.Size = new System.Drawing.Size(600, 171);
             this.dataGridViewIzdaniRacuni.TabIndex = 2;
             // 
+            // racunBindingSource
+            // 
+            this.racunBindingSource.DataSource = typeof(DB.racun);
+            // 
             // racunidDataGridViewTextBoxColumn
             // 
             this.racunidDataGridViewTextBoxColumn.DataPropertyName = "racun_id";
@@ -81,7 +85,7 @@
             // zaposlenikFKDataGridViewTextBoxColumn
             // 
             this.zaposlenikFKDataGridViewTextBoxColumn.DataPropertyName = "zaposlenik_FK";
-            this.zaposlenikFKDataGridViewTextBoxColumn.HeaderText = "Zaposlenik ID";
+            this.zaposlenikFKDataGridViewTextBoxColumn.HeaderText = "Zaposlenik";
             this.zaposlenikFKDataGridViewTextBoxColumn.Name = "zaposlenikFKDataGridViewTextBoxColumn";
             // 
             // datumvrijemeizdavanjaDataGridViewTextBoxColumn
@@ -110,10 +114,6 @@
             this.rezervacijaDataGridViewTextBoxColumn.HeaderText = "rezervacija";
             this.rezervacijaDataGridViewTextBoxColumn.Name = "rezervacijaDataGridViewTextBoxColumn";
             this.rezervacijaDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // racunBindingSource
-            // 
-            this.racunBindingSource.DataSource = typeof(DB.racun);
             // 
             // FormaPregledRacuna
             // 
