@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -51,6 +52,7 @@ namespace WeTravel
 
         private void FormaGlavniIzbornik_Load(object sender, EventArgs e)
         {
+            this.KeyPreview = true;
             int razina = Sesija.RazinaPrava;
             if (razina != 1)
             {
@@ -60,6 +62,15 @@ namespace WeTravel
             {
                 buttonStatistika.Hide();
                 buttonIzdavanjeRacuna.Hide();
+                buttonPregledRacuna.Hide();
+            }
+        }
+
+        private void FormaGlavniIzbornik_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode.ToString() == "F1")
+            {
+                Help.ShowHelp(null, Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\help.chm", HelpNavigator.Topic, "Glavni_izbornik.htm");
             }
         }
     }

@@ -207,6 +207,7 @@
             this.Name = "FormaAdministracijaRacuna";
             this.Text = "Administracija korisničkih računa";
             this.Load += new System.EventHandler(this.FormaAdministracijaRacuna_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormaAdministracijaRacuna_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPrikazZaposlenika)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.zaposlenikBindingSource)).EndInit();
             this.ResumeLayout(false);

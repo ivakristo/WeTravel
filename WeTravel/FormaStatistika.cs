@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DB;
+using System.IO;
 
 namespace WeTravel
 {
@@ -98,6 +99,14 @@ namespace WeTravel
                     brojac++;
                 }
                 chartStatistika.DataSource = putovanjeBindingSource;
+            }
+        }
+
+        private void FormaStatistika_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode.ToString() == "F1")
+            {
+                Help.ShowHelp(null, Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\help.chm", HelpNavigator.Topic, "Pregled_statistike.htm");
             }
         }
     }

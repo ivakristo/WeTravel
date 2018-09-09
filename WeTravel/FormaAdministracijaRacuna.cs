@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DB;
+using System.IO;
 
 namespace WeTravel
 {
@@ -78,6 +79,14 @@ namespace WeTravel
                 FormaNoviKorisnickiRacun formaNoviKorRac = new FormaNoviKorisnickiRacun(selektiraniZaposlenik);
                 formaNoviKorRac.ShowDialog();
                 PrikaziZaposlenike();
+            }
+        }
+
+        private void FormaAdministracijaRacuna_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode.ToString() == "F1")
+            {
+                Help.ShowHelp(null, Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\help.chm", HelpNavigator.Topic, "Administracija_korisnika.htm");
             }
         }
     }

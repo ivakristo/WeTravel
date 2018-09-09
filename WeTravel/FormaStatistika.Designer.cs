@@ -226,6 +226,7 @@
             this.Name = "FormaStatistika";
             this.Text = "Statistika";
             this.Load += new System.EventHandler(this.FormaStatistika_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormaStatistika_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStatistika)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.putovanjeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartStatistika)).EndInit();

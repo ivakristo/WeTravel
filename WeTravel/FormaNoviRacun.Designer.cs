@@ -247,6 +247,7 @@
             this.Name = "FormaNoviRacun";
             this.Text = "Izdavanje računa";
             this.Load += new System.EventHandler(this.FormaNoviRacun_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormaNoviRacun_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRezervacijePutovanja)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rezervacijaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPutnik)).EndInit();

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DB;
+using System.IO;
 
 namespace WeTravel
 {
@@ -28,6 +29,7 @@ namespace WeTravel
         }
         private void FormaPregledRacuna_Load(object sender, EventArgs e)
         {
+            this.KeyPreview = true;
             PrikaziRacune();
         }
 
@@ -48,6 +50,14 @@ namespace WeTravel
                 }
                 FormaRacun formaRacun = new FormaRacun(rezervacijaID, nazivPutovanja);
                 formaRacun.ShowDialog();
+            }
+        }
+
+        private void FormaPregledRacuna_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode.ToString() == "F1")
+            {
+                Help.ShowHelp(null, Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\help.chm", HelpNavigator.Topic, "Pregled_izdanih_racuna.htm");
             }
         }
     }

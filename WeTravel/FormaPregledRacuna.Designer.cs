@@ -32,13 +32,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormaPregledRacuna));
             this.buttonPregledRacuna = new System.Windows.Forms.Button();
             this.dataGridViewIzdaniRacuni = new System.Windows.Forms.DataGridView();
-            this.racunBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.racunidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.zaposlenikFKDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datumvrijemeizdavanjaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ukupnacijenaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rezervacijaFKDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rezervacijaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.racunBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewIzdaniRacuni)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.racunBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -71,10 +71,6 @@
             this.dataGridViewIzdaniRacuni.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewIzdaniRacuni.Size = new System.Drawing.Size(600, 171);
             this.dataGridViewIzdaniRacuni.TabIndex = 2;
-            // 
-            // racunBindingSource
-            // 
-            this.racunBindingSource.DataSource = typeof(DB.racun);
             // 
             // racunidDataGridViewTextBoxColumn
             // 
@@ -115,6 +111,10 @@
             this.rezervacijaDataGridViewTextBoxColumn.Name = "rezervacijaDataGridViewTextBoxColumn";
             this.rezervacijaDataGridViewTextBoxColumn.Visible = false;
             // 
+            // racunBindingSource
+            // 
+            this.racunBindingSource.DataSource = typeof(DB.racun);
+            // 
             // FormaPregledRacuna
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -126,6 +126,7 @@
             this.Name = "FormaPregledRacuna";
             this.Text = "Pregled izdanih računa";
             this.Load += new System.EventHandler(this.FormaPregledRacuna_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormaPregledRacuna_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewIzdaniRacuni)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.racunBindingSource)).EndInit();
             this.ResumeLayout(false);

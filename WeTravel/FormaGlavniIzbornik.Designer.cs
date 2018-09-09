@@ -105,6 +105,7 @@
             this.Name = "FormaGlavniIzbornik";
             this.Text = "Glavni izbornik";
             this.Load += new System.EventHandler(this.FormaGlavniIzbornik_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormaGlavniIzbornik_KeyDown);
             this.ResumeLayout(false);
 
         }
