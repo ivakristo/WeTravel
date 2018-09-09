@@ -69,6 +69,7 @@ namespace WeTravel
             FormaNoviKorisnickiRacun formaNoviKorRac = new FormaNoviKorisnickiRacun(selektiraniZaposlenik);
             formaNoviKorRac.ShowDialog();
             PrikaziZaposlenike();
+            textBoxPretrazivanjeZaposlenika.Clear();
         }
 
         private void buttonUrediKorisnickiRacun_Click(object sender, EventArgs e)
@@ -80,6 +81,7 @@ namespace WeTravel
                 formaNoviKorRac.ShowDialog();
                 PrikaziZaposlenike();
             }
+            textBoxPretrazivanjeZaposlenika.Clear();
         }
 
         private void FormaAdministracijaRacuna_KeyDown(object sender, KeyEventArgs e)
@@ -87,6 +89,24 @@ namespace WeTravel
             if (e.KeyCode.ToString() == "F1")
             {
                 Help.ShowHelp(null, Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\help.chm", HelpNavigator.Topic, "Administracija_korisnika.htm");
+            }
+        }
+
+        private void textBoxPretrazivanjeZaposlenika_TextChanged(object sender, EventArgs e)
+        {
+            string pretrazivanjeIme = textBoxPretrazivanjeZaposlenika.Text;
+            if (string.IsNullOrEmpty(pretrazivanjeIme))
+            {
+                PrikaziZaposlenike();
+            }
+            else
+            {
+                BindingList<zaposlenik> listaZaposlenika = null;
+                using (var bp = new EntitiesWeTravel())
+                {
+                    listaZaposlenika = new BindingList<zaposlenik>(bp.zaposlenik.Where(imeZaposlenika => imeZaposlenika.ime.Contains(pretrazivanjeIme)).ToList());
+                }
+                zaposlenikBindingSource.DataSource = listaZaposlenika;
             }
         }
     }

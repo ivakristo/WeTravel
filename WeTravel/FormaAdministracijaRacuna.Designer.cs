@@ -46,6 +46,8 @@
             this.buttonPromjenaStatusa = new System.Windows.Forms.Button();
             this.buttonUrediKorisnickiRacun = new System.Windows.Forms.Button();
             this.buttonNoviKorisnickiRacun = new System.Windows.Forms.Button();
+            this.textBoxPretrazivanjeZaposlenika = new System.Windows.Forms.TextBox();
+            this.labelPretrazivanjeZaposlenika = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPrikazZaposlenika)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.zaposlenikBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -194,11 +196,30 @@
             this.buttonNoviKorisnickiRacun.UseVisualStyleBackColor = false;
             this.buttonNoviKorisnickiRacun.Click += new System.EventHandler(this.buttonNoviKorisnickiRacun_Click);
             // 
+            // textBoxPretrazivanjeZaposlenika
+            // 
+            this.textBoxPretrazivanjeZaposlenika.Location = new System.Drawing.Point(639, 49);
+            this.textBoxPretrazivanjeZaposlenika.Name = "textBoxPretrazivanjeZaposlenika";
+            this.textBoxPretrazivanjeZaposlenika.Size = new System.Drawing.Size(151, 20);
+            this.textBoxPretrazivanjeZaposlenika.TabIndex = 9;
+            this.textBoxPretrazivanjeZaposlenika.TextChanged += new System.EventHandler(this.textBoxPretrazivanjeZaposlenika_TextChanged);
+            // 
+            // labelPretrazivanjeZaposlenika
+            // 
+            this.labelPretrazivanjeZaposlenika.AutoSize = true;
+            this.labelPretrazivanjeZaposlenika.Location = new System.Drawing.Point(636, 25);
+            this.labelPretrazivanjeZaposlenika.Name = "labelPretrazivanjeZaposlenika";
+            this.labelPretrazivanjeZaposlenika.Size = new System.Drawing.Size(83, 13);
+            this.labelPretrazivanjeZaposlenika.TabIndex = 10;
+            this.labelPretrazivanjeZaposlenika.Text = "Ime zaposlenika";
+            // 
             // FormaAdministracijaRacuna
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(819, 348);
+            this.Controls.Add(this.labelPretrazivanjeZaposlenika);
+            this.Controls.Add(this.textBoxPretrazivanjeZaposlenika);
             this.Controls.Add(this.dataGridViewPrikazZaposlenika);
             this.Controls.Add(this.buttonPromjenaStatusa);
             this.Controls.Add(this.buttonUrediKorisnickiRacun);
@@ -211,6 +232,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPrikazZaposlenika)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.zaposlenikBindingSource)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -232,5 +254,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn prijavaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn putovanjeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn razinapravaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.TextBox textBoxPretrazivanjeZaposlenika;
+        private System.Windows.Forms.Label labelPretrazivanjeZaposlenika;
     }
 }
